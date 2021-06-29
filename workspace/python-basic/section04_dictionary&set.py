@@ -5,8 +5,8 @@ b = {0: 'hello', 1: 'python'}
 c = {'arr': [1, 2, 3, 4, 5]}
 
 # 출력
-print(a['name']) # kwh
-print(a.get('name')) # kwh
+print(a['name']) # kwh 해당 키값이 없으면 KeyError
+print(a.get('name')) # kwh 해당 키값이 없으면 None 반환
 print(c['arr'][1:3]) # [2, 3]
 
 # 딕셔너리 추가
