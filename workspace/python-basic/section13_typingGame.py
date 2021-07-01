@@ -6,8 +6,8 @@ import sqlite3
 import datetime
 
 conn = sqlite3.connect('C:/dev/zero-base/workspace/resources/records.db', isolation_level=None)
-c = conn.cursor()
-c.execute(
+cursor = conn.cursor()
+cursor.execute(
     "CREATE TABLE IF NOT EXISTS records(id INTEGER PRIMARY KEY AUTOINCREMENT,  cor_cnt INTEGER, record text, regdate text)"
 )
 
@@ -64,7 +64,7 @@ else:
     print('You need more practice, never give it up!')
 
 # 기록 DB 삽입
-c.execute(
+cursor.execute(
     "INSERT INTO records('cor_cnt', 'record', 'regdate') VALUES (?, ?, ?)",
     (
         cor_cnt, et, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
